@@ -1,59 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"11 ./MainMgr.h
-[; ;./MainMgr.h: 11: void project_init(void);
-[v _project_init `(v ~T0 @X0 0 ef ]
-"9 ./MotorMgr.h
-[; ;./MotorMgr.h: 9: extern void motor_init(void);
-[v _motor_init `(v ~T0 @X0 0 ef ]
-"9 ./BluetoothMgr.h
-[; ;./BluetoothMgr.h: 9: extern void UART_init(void);
-[v _UART_init `(v ~T0 @X0 0 ef ]
-[v F36 `(v ~T0 @X0 1 tf1`ul ]
-"12 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
-[v __delay `JF36 ~T0 @X0 0 e ]
-[p i __delay ]
-"4108 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"4150
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4150: extern volatile __bit RC4 __attribute__((address(0x3C)));
-[v _RC4 `Vb ~T0 @X0 0 e@60 ]
-"1417
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1417: extern volatile unsigned char TRISA __attribute__((address(0x085)));
-[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
-"1479
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1479: extern volatile unsigned char TRISB __attribute__((address(0x086)));
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1541
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1541: extern volatile unsigned char TRISC __attribute__((address(0x087)));
-[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
-"1603
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"3388
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3388: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
-[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"3450
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3450: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"1246
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1246: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
-[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
-"2978
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2978: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"4180
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4180: extern volatile __bit RCIF __attribute__((address(0x65)));
-[v _RCIF `Vb ~T0 @X0 0 e@101 ]
-"1141
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1141: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
-[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"10 ./MotorMgr.h
-[; ;./MotorMgr.h: 10: extern uint8_t motor_command(uint8_t);
-[v _motor_command `(uc ~T0 @X0 0 ef1`uc ]
+"3700 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3700: extern volatile __bit BRGH __attribute__((address(0x4C2)));
+[v _BRGH `Vb ~T0 @X0 0 e@1218 ]
+"2643
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2643: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"4318
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4318: extern volatile __bit SYNC __attribute__((address(0x4C4)));
+[v _SYNC `Vb ~T0 @X0 0 e@1220 ]
+"4264
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4264: extern volatile __bit SPEN __attribute__((address(0xC7)));
+[v _SPEN `Vb ~T0 @X0 0 e@199 ]
+"4177
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4177: extern volatile __bit RCIE __attribute__((address(0x465)));
+[v _RCIE `Vb ~T0 @X0 0 e@1125 ]
+"4045
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4045: extern volatile __bit PEIE __attribute__((address(0x5E)));
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"3901
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3901: extern volatile __bit GIE __attribute__((address(0x5F)));
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"3841
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3841: extern volatile __bit CREN __attribute__((address(0xC4)));
+[v _CREN `Vb ~T0 @X0 0 e@196 ]
 "55 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -288,249 +257,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"16 ./MainMgr.h
-[; ;./MainMgr.h: 16: static uint8_t com_buffer = 0;
-[v _com_buffer `uc ~T0 @X0 1 s ]
-[i _com_buffer
--> -> 0 `i `uc
-]
-"17
-[; ;./MainMgr.h: 17: static uint8_t motorFault = 1;
-[v _motorFault `uc ~T0 @X0 1 s ]
-[i _motorFault
--> -> 1 `i `uc
-]
+"10 BluetoothMgr.c
+[; ;BluetoothMgr.c: 10: void UART_init(void)
+[v _UART_init `(v ~T0 @X0 1 ef ]
+"11
+[; ;BluetoothMgr.c: 11: {
+{
+[e :U _UART_init ]
+[f ]
+"12
+[; ;BluetoothMgr.c: 12:   BRGH = 1;
+[e = _BRGH -> -> 1 `i `b ]
+"13
+[; ;BluetoothMgr.c: 13:   SPBRG = 0x0C;
+[e = _SPBRG -> -> 12 `i `uc ]
+"15
+[; ;BluetoothMgr.c: 15:   SYNC = 0;
+[e = _SYNC -> -> 0 `i `b ]
+"16
+[; ;BluetoothMgr.c: 16:   SPEN = 1;
+[e = _SPEN -> -> 1 `i `b ]
 "19
-[p x WDTE  =  OFF ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"22 MainMgr.c
-[; ;MainMgr.c: 22: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
+[; ;BluetoothMgr.c: 19:   RCIE = 1;
+[e = _RCIE -> -> 1 `i `b ]
+"20
+[; ;BluetoothMgr.c: 20:   PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
+"21
+[; ;BluetoothMgr.c: 21:   GIE = 1;
+[e = _GIE -> -> 1 `i `b ]
 "23
-[; ;MainMgr.c: 23:     project_init();
-[e ( _project_init ..  ]
+[; ;BluetoothMgr.c: 23:   CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
 "24
-[; ;MainMgr.c: 24:     motor_init();
-[e ( _motor_init ..  ]
-"25
-[; ;MainMgr.c: 25:     UART_init();
-[e ( _UART_init ..  ]
-"26
-[; ;MainMgr.c: 26:     _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"29
-[; ;MainMgr.c: 29:     RB0 = 0;
-[e = _RB0 -> -> 0 `i `b ]
-"30
-[; ;MainMgr.c: 30:     RC4 = 1;
-[e = _RC4 -> -> 1 `i `b ]
-"32
-[; ;MainMgr.c: 32:     while(1)
-[e :U 140 ]
-"33
-[; ;MainMgr.c: 33:     {
-{
-"35
-[; ;MainMgr.c: 35:     }
-}
-[e :U 139 ]
-[e $U 140  ]
-[e :U 141 ]
-"37
-[; ;MainMgr.c: 37: }
+[; ;BluetoothMgr.c: 24: }
 [e :UE 138 ]
-}
-"40
-[; ;MainMgr.c: 40: void project_init(void)
-[v _project_init `(v ~T0 @X0 1 ef ]
-"41
-[; ;MainMgr.c: 41: {
-{
-[e :U _project_init ]
-[f ]
-"44
-[; ;MainMgr.c: 44:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"45
-[; ;MainMgr.c: 45:     TRISB = 0x10;
-[e = _TRISB -> -> 16 `i `uc ]
-"51
-[; ;MainMgr.c: 51:     TRISC = 0xB0;
-[e = _TRISC -> -> 176 `i `uc ]
-"59
-[; ;MainMgr.c: 59:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"68
-[; ;MainMgr.c: 68:     ANSEL = 0x00;
-[e = _ANSEL -> -> 0 `i `uc ]
-"69
-[; ;MainMgr.c: 69:     ANSELH = 0x08;
-[e = _ANSELH -> -> 8 `i `uc ]
-"71
-[; ;MainMgr.c: 71:     ADCON0 = 0x2D;
-[e = _ADCON0 -> -> 45 `i `uc ]
-"76
-[; ;MainMgr.c: 76:     ADCON1 = 0x00;
-[e = _ADCON1 -> -> 0 `i `uc ]
-"78
-[; ;MainMgr.c: 78: }
-[e :UE 142 ]
-}
-[v $root$_ISR_treatment `(v ~T0 @X0 0 e ]
-"80
-[; ;MainMgr.c: 80: void __attribute__((picinterrupt(("")))) ISR_treatment (void)
-[v _ISR_treatment `(v ~T1 @X0 1 ef ]
-"81
-[; ;MainMgr.c: 81: {
-{
-[e :U _ISR_treatment ]
-[f ]
-"82
-[; ;MainMgr.c: 82:     if ( RCIF == 1)
-[e $ ! == -> _RCIF `i -> 1 `i 144  ]
-"83
-[; ;MainMgr.c: 83:     {
-{
-"84
-[; ;MainMgr.c: 84:         com_buffer = RCREG;
-[e = _com_buffer _RCREG ]
-"86
-[; ;MainMgr.c: 86:         switch(com_buffer){
-[e $U 146  ]
-{
-"87
-[; ;MainMgr.c: 87:             case 0xF9:
-[e :U 147 ]
-"88
-[; ;MainMgr.c: 88:                 RC4 = 0;
-[e = _RC4 -> -> 0 `i `b ]
-"89
-[; ;MainMgr.c: 89:                 motorFault = motor_command(0x9);
-[e = _motorFault ( _motor_command (1 -> -> 9 `i `uc ]
-"90
-[; ;MainMgr.c: 90:                 break;
-[e $U 145  ]
-"92
-[; ;MainMgr.c: 92:             case 0xF6:
-[e :U 148 ]
-"93
-[; ;MainMgr.c: 93:                 RC4 = 0;
-[e = _RC4 -> -> 0 `i `b ]
-"94
-[; ;MainMgr.c: 94:                 motorFault = motor_command(0x6);
-[e = _motorFault ( _motor_command (1 -> -> 6 `i `uc ]
-"95
-[; ;MainMgr.c: 95:                 break;
-[e $U 145  ]
-"97
-[; ;MainMgr.c: 97:             case 0xF8:
-[e :U 149 ]
-"98
-[; ;MainMgr.c: 98:                 RC4 = 0;
-[e = _RC4 -> -> 0 `i `b ]
-"99
-[; ;MainMgr.c: 99:                 motorFault = motor_command(0x8);
-[e = _motorFault ( _motor_command (1 -> -> 8 `i `uc ]
-"100
-[; ;MainMgr.c: 100:                 break;
-[e $U 145  ]
-"102
-[; ;MainMgr.c: 102:             case 0xF1:
-[e :U 150 ]
-"103
-[; ;MainMgr.c: 103:                 RC4 = 0;
-[e = _RC4 -> -> 0 `i `b ]
-"104
-[; ;MainMgr.c: 104:                 motorFault = motor_command(0x1);
-[e = _motorFault ( _motor_command (1 -> -> 1 `i `uc ]
-"105
-[; ;MainMgr.c: 105:                 break;
-[e $U 145  ]
-"107
-[; ;MainMgr.c: 107:             case 0xF0:
-[e :U 151 ]
-"108
-[; ;MainMgr.c: 108:                 RC4 = 1;
-[e = _RC4 -> -> 1 `i `b ]
-"109
-[; ;MainMgr.c: 109:                 motorFault = motor_command(0x0);
-[e = _motorFault ( _motor_command (1 -> -> 0 `i `uc ]
-"110
-[; ;MainMgr.c: 110:                 break;
-[e $U 145  ]
-"112
-[; ;MainMgr.c: 112:             case 0x9F:
-[e :U 152 ]
-"113
-[; ;MainMgr.c: 113:                 RB0 = 1;
-[e = _RB0 -> -> 1 `i `b ]
-"114
-[; ;MainMgr.c: 114:                 break;
-[e $U 145  ]
-"116
-[; ;MainMgr.c: 116:             case 0x90:
-[e :U 153 ]
-"117
-[; ;MainMgr.c: 117:                 RB0 = 0;
-[e = _RB0 -> -> 0 `i `b ]
-"118
-[; ;MainMgr.c: 118:                 break;
-[e $U 145  ]
-"120
-[; ;MainMgr.c: 120:             case 0x99:
-[e :U 154 ]
-"121
-[; ;MainMgr.c: 121:                 break;
-[e $U 145  ]
-"123
-[; ;MainMgr.c: 123:             case 0x96:
-[e :U 155 ]
-"124
-[; ;MainMgr.c: 124:                 break;
-[e $U 145  ]
-"126
-[; ;MainMgr.c: 126:             default:
-[e :U 156 ]
-"127
-[; ;MainMgr.c: 127:                 break;
-[e $U 145  ]
-"128
-[; ;MainMgr.c: 128:         }
-}
-[e $U 145  ]
-[e :U 146 ]
-[e [\ -> _com_buffer `i , $ -> 249 `i 147
- , $ -> 246 `i 148
- , $ -> 248 `i 149
- , $ -> 241 `i 150
- , $ -> 240 `i 151
- , $ -> 159 `i 152
- , $ -> 144 `i 153
- , $ -> 153 `i 154
- , $ -> 150 `i 155
- 156 ]
-[e :U 145 ]
-"129
-[; ;MainMgr.c: 129:         if ( motorFault == 0xAA )
-[e $ ! == -> _motorFault `i -> 170 `i 157  ]
-"130
-[; ;MainMgr.c: 130:         {
-{
-"132
-[; ;MainMgr.c: 132:         }
-}
-[e :U 157 ]
-"133
-[; ;MainMgr.c: 133:         RCIF = 0;
-[e = _RCIF -> -> 0 `i `b ]
-"134
-[; ;MainMgr.c: 134:     }
-}
-[e :U 144 ]
-"135
-[; ;MainMgr.c: 135: }
-[e :UE 143 ]
 }

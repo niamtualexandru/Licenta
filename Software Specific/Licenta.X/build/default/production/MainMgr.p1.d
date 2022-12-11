@@ -1,2 +1,5 @@
 build/default/production/MainMgr.p1:  \
-MainMgr.c 
+MainMgr.c  \
+MainMgr.h  \
+BluetoothMgr.h  \
+MotorMgr.h 

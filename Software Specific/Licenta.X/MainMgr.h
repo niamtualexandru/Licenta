@@ -10,14 +10,27 @@
 /* Functions declaration */
 void project_init(void);
 
+
+
+/* Variable declaration */
+static uint8_t com_buffer = 0;
+static uint8_t motorFault = 1;
+
 #pragma config WDTE = OFF
 
 #define _XTAL_FREQ 8000000
 
 /* not used ports */
-#define NOT_USED 0x00
+#define ALL_OUTPUT 0x00
 
 #define ALL_DIGITAL 0x00
+
+/* HEADLIGHT CONTROL */
+#define HEADLIGHTS RB0
+#define BACKLIGHTS RC4
+#define ON 1
+#define OFF 0
+
 
 
 #ifndef E_OK

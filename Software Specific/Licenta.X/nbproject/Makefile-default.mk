@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=MainMgr.c BluetoothMgr.c
+SOURCEFILES_QUOTED_IF_SPACED=MainMgr.c BluetoothMgr.c MotorMng.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/MainMgr.p1 ${OBJECTDIR}/BluetoothMgr.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/MainMgr.p1.d ${OBJECTDIR}/BluetoothMgr.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/MainMgr.p1 ${OBJECTDIR}/BluetoothMgr.p1 ${OBJECTDIR}/MotorMng.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/MainMgr.p1.d ${OBJECTDIR}/BluetoothMgr.p1.d ${OBJECTDIR}/MotorMng.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/MainMgr.p1 ${OBJECTDIR}/BluetoothMgr.p1
+OBJECTFILES=${OBJECTDIR}/MainMgr.p1 ${OBJECTDIR}/BluetoothMgr.p1 ${OBJECTDIR}/MotorMng.p1
 
 # Source Files
-SOURCEFILES=MainMgr.c BluetoothMgr.c
+SOURCEFILES=MainMgr.c BluetoothMgr.c MotorMng.c
 
 
 
@@ -104,6 +104,14 @@ ${OBJECTDIR}/BluetoothMgr.p1: BluetoothMgr.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/BluetoothMgr.d ${OBJECTDIR}/BluetoothMgr.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/BluetoothMgr.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/MotorMng.p1: MotorMng.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/MotorMng.p1.d 
+	@${RM} ${OBJECTDIR}/MotorMng.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/MotorMng.p1 MotorMng.c 
+	@-${MV} ${OBJECTDIR}/MotorMng.d ${OBJECTDIR}/MotorMng.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MotorMng.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/MainMgr.p1: MainMgr.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -120,6 +128,14 @@ ${OBJECTDIR}/BluetoothMgr.p1: BluetoothMgr.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/BluetoothMgr.p1 BluetoothMgr.c 
 	@-${MV} ${OBJECTDIR}/BluetoothMgr.d ${OBJECTDIR}/BluetoothMgr.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/BluetoothMgr.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/MotorMng.p1: MotorMng.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/MotorMng.p1.d 
+	@${RM} ${OBJECTDIR}/MotorMng.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/MotorMng.p1 MotorMng.c 
+	@-${MV} ${OBJECTDIR}/MotorMng.d ${OBJECTDIR}/MotorMng.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MotorMng.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

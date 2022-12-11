@@ -1,4 +1,4 @@
-# 1 "MainMgr.c"
+# 1 "BluetoothMgr.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MainMgr.c" 2
-# 17 "MainMgr.c"
+# 1 "BluetoothMgr.c" 2
+
+
+
+
+
+
+
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2625,151 +2631,21 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 17 "MainMgr.c" 2
-
-# 1 "./MainMgr.h" 1
-# 11 "./MainMgr.h"
-void project_init(void);
+# 8 "BluetoothMgr.c" 2
 
 
-
-
-static uint8_t com_buffer = 0;
-static uint8_t motorFault = 1;
-
-#pragma config WDTE = OFF
-# 18 "MainMgr.c" 2
-
-# 1 "./BluetoothMgr.h" 1
-
-
-
-
-
-
-
-
-extern void UART_init(void);
-# 19 "MainMgr.c" 2
-
-# 1 "./MotorMgr.h" 1
-
-
-
-
-
-
-
-
-extern void motor_init(void);
-extern uint8_t motor_command(uint8_t);
-# 20 "MainMgr.c" 2
-
-
-void main(void) {
-    project_init();
-    motor_init();
-    UART_init();
-    _delay((unsigned long)((100)*(8000000/4000.0)));
-
-
-    RB0 = 0;
-    RC4 = 1;
-
-    while(1)
-    {
-
-    }
-
-}
-
-
-void project_init(void)
+void UART_init(void)
 {
+  BRGH = 1;
+  SPBRG = 0x0C;
+
+  SYNC = 0;
+  SPEN = 1;
 
 
-    TRISA = 0x00;
-    TRISB = 0x10;
+  RCIE = 1;
+  PEIE = 1;
+  GIE = 1;
 
-
-
-
-
-    TRISC = 0xB0;
-
-
-
-
-
-
-
-    TRISD = 0x00;
-# 68 "MainMgr.c"
-    ANSEL = 0x00;
-    ANSELH = 0x08;
-
-    ADCON0 = 0x2D;
-
-
-
-
-    ADCON1 = 0x00;
-
-}
-
-void __attribute__((picinterrupt(("")))) ISR_treatment (void)
-{
-    if ( RCIF == 1)
-    {
-        com_buffer = RCREG;
-
-        switch(com_buffer){
-            case 0xF9:
-                RC4 = 0;
-                motorFault = motor_command(0x9);
-                break;
-
-            case 0xF6:
-                RC4 = 0;
-                motorFault = motor_command(0x6);
-                break;
-
-            case 0xF8:
-                RC4 = 0;
-                motorFault = motor_command(0x8);
-                break;
-
-            case 0xF1:
-                RC4 = 0;
-                motorFault = motor_command(0x1);
-                break;
-
-            case 0xF0:
-                RC4 = 1;
-                motorFault = motor_command(0x0);
-                break;
-
-            case 0x9F:
-                RB0 = 1;
-                break;
-
-            case 0x90:
-                RB0 = 0;
-                break;
-
-            case 0x99:
-                break;
-
-            case 0x96:
-                break;
-
-            default:
-                break;
-        }
-        if ( motorFault == 0xAA )
-        {
-
-        }
-        RCIF = 0;
-    }
+  CREN = 1;
 }

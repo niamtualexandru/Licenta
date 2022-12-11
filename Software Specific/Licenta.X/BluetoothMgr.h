@@ -6,10 +6,7 @@
  */
 
 /* Functions declaration */
-void UART_init(void);
-
-/* Variable declaration */
-uint8_t com_buffer = 0;
+extern void UART_init(void);
 
 /* Constants definition */
 
@@ -34,6 +31,7 @@ uint8_t com_buffer = 0;
 #define GO_BACKWARD 0x6
 #define GO_LEFT 0x8
 #define GO_RIGHT 0x1
+#define GO_STANDBY 0x0
 
 #define SYSTEM_COMMAND 0x9
 #define OPEN_HEADLIGHTS 0xF
