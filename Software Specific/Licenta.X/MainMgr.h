@@ -28,17 +28,18 @@ static uint8_t motorFault = 1;
 /* HEADLIGHT CONTROL */
 #define HEADLIGHTS RB0
 #define BACKLIGHTS RC4
-#define ON 1
-#define OFF 0
+#define ON 0b1
+#define OFF 0b0
 
+#define INIT_OK 0x11
 
 
 #ifndef E_OK
-#define E_OK 1
+#define E_OK 0b1
 #endif
 
 #ifndef E_NOT_OK
-#define E_NOT_OK 0
+#define E_NOT_OK 0b0
 #endif
 
 

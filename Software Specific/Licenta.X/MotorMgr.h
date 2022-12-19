@@ -14,7 +14,7 @@ extern uint8_t motor_command(uint8_t);
 #define MOTOR2_FORWARD RD3
 #define MOTOR2_BACKWARD RD2
 
-#define GO_FORWARD 0x9
+#define GO_FORWARD 0xF
 #define GO_BACKWARD 0x6
 #define GO_LEFT 0x8
 #define GO_RIGHT 0x1

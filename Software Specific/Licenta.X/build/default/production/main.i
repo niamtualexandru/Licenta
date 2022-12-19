@@ -1,4 +1,4 @@
-# 1 "MotorMng.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MotorMng.c" 2
-
-
-
-
-
-
-
+# 1 "main.c" 2
+# 19 "main.c"
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2631,7 +2625,33 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 8 "MotorMng.c" 2
+# 19 "main.c" 2
+
+
+# 1 "./MainMgr.h" 1
+# 11 "./MainMgr.h"
+void project_init(void);
+
+
+
+
+static uint8_t com_buffer = 0;
+static uint8_t motorFault = 1;
+
+#pragma config WDTE = OFF
+# 21 "main.c" 2
+
+# 1 "./BluetoothMgr.h" 1
+
+
+
+
+
+
+
+
+extern void UART_init(void);
+# 22 "main.c" 2
 
 # 1 "./MotorMgr.h" 1
 
@@ -2644,67 +2664,61 @@ extern __bank0 __bit __timeout;
 
 extern void motor_init(void);
 extern uint8_t motor_command(uint8_t);
-# 9 "MotorMng.c" 2
+# 23 "main.c" 2
+
+
+
+#pragma config WDTE = OFF
+
+
+
+void main(void) {
+    project_init();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
 
 
 
-void motor_init(void)
-{
-    RD1 = 0;
-    RD0 = 0;
-    RD3 = 0;
-    RD2 = 0;
+
+
+
+    while(1)
+    {
+
+        RD2 = 0;
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        RD2 = 1;
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+    }
+
 }
 
-uint8_t motor_command(uint8_t command)
+
+void project_init(void)
 {
-    uint8_t return_value;
-    switch(command)
-    {
-        case 0xF :
-            RD1 = 1;
-            RD0 = 0;
-            RD3 = 1;
-            RD2 = 0;
-            return_value = 1;
-        break;
 
-        case 0x6 :
-            RD1 = 0;
-            RD0 = 1;
-            RD3 = 0;
-            RD2 = 1;
-            return_value = 1;
-        break;
 
-        case 0x8 :
-            RD1 = 0;
-            RD0 = 1;
-            RD3 = 1;
-            RD2 = 0;
-            return_value = 1;
-        break;
 
-        case 0x1 :
-            RD1 = 1;
-            RD0 = 0;
-            RD3 = 0;
-            RD2 = 1;
-            return_value = 1;
-        break;
 
-        case 0x0:
-            RD1 = 0;
-            RD0 = 0;
-            RD3 = 0;
-            RD2 = 0;
-            return_value = 1;
-        break;
 
-        default:
-            return_value = 0xAA;
-        break;
-    }
-    return return_value;
+    TRISA = 0x00;
+    TRISB = 0x10;
+
+
+
+
+
+    TRISC = 0xA0;
+
+
+
+
+
+
+
+    TRISD = 0x00;
+# 83 "main.c"
+    ANSEL = 0x00;
+    ANSELH = 0x08;
+# 93 "main.c"
 }

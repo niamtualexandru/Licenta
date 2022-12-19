@@ -13,11 +13,11 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"51 D:\Facultate\Licenta\Software Specific\Licenta.X\MainMgr.c
+"43 D:\Facultate\Licenta\Software Specific\Licenta.X\MainMgr.c
 [v _main main `(v  1 e 1 0 ]
-"69
+"59
 [v _project_init project_init `(v  1 e 1 0 ]
-"112
+"102
 [v _ISR_treatment ISR_treatment `II(v  1 e 1 0 ]
 "13 D:\Facultate\Licenta\Software Specific\Licenta.X\MotorMng.c
 [v _motor_init motor_init `(v  1 e 1 0 ]
@@ -93,15 +93,15 @@
 [v _TXIE TXIE `VEb  1 e 0 @1124 ]
 "4549
 [v _TXIF TXIF `VEb  1 e 0 @100 ]
-"51 D:\Facultate\Licenta\Software Specific\Licenta.X\MainMgr.c
+"43 D:\Facultate\Licenta\Software Specific\Licenta.X\MainMgr.c
 [v _main main `(v  1 e 1 0 ]
 {
-"66
+"56
 } 0
-"69
+"59
 [v _project_init project_init `(v  1 e 1 0 ]
 {
-"110
+"100
 } 0
 "13 D:\Facultate\Licenta\Software Specific\Licenta.X\MotorMng.c
 [v _motor_init motor_init `(v  1 e 1 0 ]
@@ -113,10 +113,10 @@
 {
 "27
 } 0
-"112 D:\Facultate\Licenta\Software Specific\Licenta.X\MainMgr.c
+"102 D:\Facultate\Licenta\Software Specific\Licenta.X\MainMgr.c
 [v _ISR_treatment ISR_treatment `II(v  1 e 1 0 ]
 {
-"176
+"165
 } 0
 "21 D:\Facultate\Licenta\Software Specific\Licenta.X\MotorMng.c
 [v _motor_command motor_command `(uc  1 e 1 0 ]

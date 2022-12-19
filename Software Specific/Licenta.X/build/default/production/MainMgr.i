@@ -7,7 +7,26 @@
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "MainMgr.c" 2
-# 17 "MainMgr.c"
+# 20 "MainMgr.c"
+#pragma config FOSC = INTRC_CLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = ON
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config IESO = ON
+#pragma config FCMEN = ON
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+
+
+
+
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2625,7 +2644,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 17 "MainMgr.c" 2
+# 38 "MainMgr.c" 2
+
+
+
 
 # 1 "./MainMgr.h" 1
 # 11 "./MainMgr.h"
@@ -2638,7 +2660,7 @@ static uint8_t com_buffer = 0;
 static uint8_t motorFault = 1;
 
 #pragma config WDTE = OFF
-# 18 "MainMgr.c" 2
+# 42 "MainMgr.c" 2
 
 # 1 "./BluetoothMgr.h" 1
 
@@ -2650,7 +2672,7 @@ static uint8_t motorFault = 1;
 
 
 extern void UART_init(void);
-# 19 "MainMgr.c" 2
+# 43 "MainMgr.c" 2
 
 # 1 "./MotorMgr.h" 1
 
@@ -2663,19 +2685,24 @@ extern void UART_init(void);
 
 extern void motor_init(void);
 extern uint8_t motor_command(uint8_t);
-# 20 "MainMgr.c" 2
+# 44 "MainMgr.c" 2
+
+
+
+#pragma config WDTE = OFF
+
 
 
 void main(void) {
     project_init();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
     motor_init();
     UART_init();
-    _delay((unsigned long)((100)*(8000000/4000.0)));
+    while(TXIF==0);
+    TXREG = 0x41;
 
-
-    RB0 = 0;
-    RC4 = 1;
-
+    RB0 = 0b0;
+    RC4 = 0b1;
     while(1)
     {
 
@@ -2686,6 +2713,9 @@ void main(void) {
 
 void project_init(void)
 {
+    IRCF0=1;
+    IRCF1=1;
+    IRCF2=1;
 
 
     TRISA = 0x00;
@@ -2695,7 +2725,7 @@ void project_init(void)
 
 
 
-    TRISC = 0xB0;
+    TRISC = 0xA0;
 
 
 
@@ -2704,7 +2734,7 @@ void project_init(void)
 
 
     TRISD = 0x00;
-# 68 "MainMgr.c"
+# 100 "MainMgr.c"
     ANSEL = 0x00;
     ANSELH = 0x08;
 
@@ -2719,42 +2749,43 @@ void project_init(void)
 
 void __attribute__((picinterrupt(("")))) ISR_treatment (void)
 {
-    if ( RCIF == 1)
+    if(RCIF == 1)
     {
         com_buffer = RCREG;
-
+        RD2 = 1;
+        _delay((unsigned long)((10)*(8000000/4000.0)));
         switch(com_buffer){
             case 0xF9:
-                RC4 = 0;
-                motorFault = motor_command(0x9);
+                RC4 = 0b0;
+                motorFault = motor_command(0xF);
                 break;
 
             case 0xF6:
-                RC4 = 0;
+                RC4 = 0b0;
                 motorFault = motor_command(0x6);
                 break;
 
             case 0xF8:
-                RC4 = 0;
+                RC4 = 0b0;
                 motorFault = motor_command(0x8);
                 break;
 
             case 0xF1:
-                RC4 = 0;
+                RC4 = 0b0;
                 motorFault = motor_command(0x1);
                 break;
 
             case 0xF0:
-                RC4 = 1;
+                RC4 = 0b1;
                 motorFault = motor_command(0x0);
                 break;
 
             case 0x9F:
-                RB0 = 1;
+                RB0 = 0b1;
                 break;
 
             case 0x90:
-                RB0 = 0;
+                RB0 = 0b0;
                 break;
 
             case 0x99:
@@ -2764,9 +2795,17 @@ void __attribute__((picinterrupt(("")))) ISR_treatment (void)
                 break;
 
             default:
+                while(TXIF==0);
+                TXREG = 0x44;
                 break;
         }
-        if ( motorFault == 0xAA )
+        while(TXIF==0);
+        TXREG = com_buffer;
+        if ( motorFault != 0xAA )
+        {
+
+        }
+        else
         {
 
         }

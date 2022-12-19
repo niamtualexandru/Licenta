@@ -1,4 +1,4 @@
-# 1 "MotorMng.c"
+# 1 "MainMgr.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,23 @@
 # 1 "<built-in>" 2
 # 1 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MotorMng.c" 2
+# 1 "MainMgr.c" 2
+# 18 "MainMgr.c"
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = ON
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config IESO = ON
+#pragma config FCMEN = ON
+#pragma config LVP = ON
+#pragma config DEBUG = ON
 
 
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
 
 
 
@@ -2631,7 +2645,33 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 8 "MotorMng.c" 2
+# 37 "MainMgr.c" 2
+
+
+# 1 "./MainMgr.h" 1
+# 11 "./MainMgr.h"
+void project_init(void);
+
+
+
+
+static uint8_t com_buffer = 0;
+static uint8_t motorFault = 1;
+
+#pragma config WDTE = OFF
+# 39 "MainMgr.c" 2
+
+# 1 "./BluetoothMgr.h" 1
+
+
+
+
+
+
+
+
+extern void UART_init(void);
+# 40 "MainMgr.c" 2
 
 # 1 "./MotorMgr.h" 1
 
@@ -2644,67 +2684,122 @@ extern __bank0 __bit __timeout;
 
 extern void motor_init(void);
 extern uint8_t motor_command(uint8_t);
-# 9 "MotorMng.c" 2
+# 41 "MainMgr.c" 2
 
+static char n=5;
+void main(void) {
+    project_init();
+    motor_init();
+    UART_init();
+    while(TXIF==0);
+    TXREG = 0x41;
 
+    RB0 = 0b0;
+    RC4 = 0b1;
+    while(1)
+    {
+    }
 
-
-void motor_init(void)
-{
-    RD1 = 0;
-    RD0 = 0;
-    RD3 = 0;
-    RD2 = 0;
 }
 
-uint8_t motor_command(uint8_t command)
+
+void project_init(void)
 {
-    uint8_t return_value;
-    switch(command)
+    IRCF0=1;
+    IRCF1=1;
+    IRCF2=1;
+
+
+    TRISA = 0x00;
+    TRISB = 0x10;
+
+
+
+
+
+    TRISC = 0xA0;
+
+
+
+
+
+
+
+    TRISD = 0x00;
+# 90 "MainMgr.c"
+    ANSEL = 0x00;
+    ANSELH = 0x08;
+
+    ADCON0 = 0x2D;
+
+
+
+
+    ADCON1 = 0x00;
+
+}
+
+void __attribute__((picinterrupt(("")))) ISR_treatment (void)
+{
+    if(RCIF == 1)
     {
-        case 0xF :
-            RD1 = 1;
-            RD0 = 0;
-            RD3 = 1;
-            RD2 = 0;
-            return_value = 1;
-        break;
+        com_buffer = RCREG;
 
-        case 0x6 :
-            RD1 = 0;
-            RD0 = 1;
-            RD3 = 0;
-            RD2 = 1;
-            return_value = 1;
-        break;
+        switch(com_buffer){
+            case 0xF9:
+                RC4 = 0b0;
+                motorFault = motor_command(0xF);
+                break;
 
-        case 0x8 :
-            RD1 = 0;
-            RD0 = 1;
-            RD3 = 1;
-            RD2 = 0;
-            return_value = 1;
-        break;
+            case 0xF6:
+                RC4 = 0b0;
+                motorFault = motor_command(0x6);
+                break;
 
-        case 0x1 :
-            RD1 = 1;
-            RD0 = 0;
-            RD3 = 0;
-            RD2 = 1;
-            return_value = 1;
-        break;
+            case 0xF8:
+                RC4 = 0b0;
+                motorFault = motor_command(0x8);
+                break;
 
-        case 0x0:
-            RD1 = 0;
-            RD0 = 0;
-            RD3 = 0;
-            RD2 = 0;
-            return_value = 1;
-        break;
+            case 0xF1:
+                RC4 = 0b0;
+                motorFault = motor_command(0x1);
+                break;
 
-        default:
-            return_value = 0xAA;
-        break;
+            case 0xF0:
+                RC4 = 0b1;
+                motorFault = motor_command(0x0);
+                break;
+
+            case 0x9F:
+                RB0 = 0b1;
+                break;
+
+            case 0x90:
+                RB0 = 0b0;
+                break;
+
+            case 0x99:
+                break;
+
+            case 0x96:
+                break;
+
+            default:
+                while(TXIF==0);
+                TXREG = 0x44;
+                break;
+        }
+        while(TXIF==0);
+        TXREG = com_buffer;
+        if ( motorFault != 0xAA )
+        {
+
+        }
+        else
+        {
+
+        }
+        RCIF = 0;
     }
-    return return_value;
 }

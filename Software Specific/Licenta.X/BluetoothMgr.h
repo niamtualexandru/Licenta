@@ -27,7 +27,7 @@ extern void UART_init(void);
  */
 
 #define MOTOR_COMMAND 0xF
-#define GO_FORWARD 0x9
+#define GO_FORWARD 0xF
 #define GO_BACKWARD 0x6
 #define GO_LEFT 0x8
 #define GO_RIGHT 0x1

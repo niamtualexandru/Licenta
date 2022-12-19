@@ -7,33 +7,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"9 ./MotorMgr.h
-[; ;./MotorMgr.h: 9: extern void motor_init(void);
-[v _motor_init `(v ~T0 @X0 0 ef ]
-"9 ./BluetoothMgr.h
-[; ;./BluetoothMgr.h: 9: extern void UART_init(void);
-[v _UART_init `(v ~T0 @X0 0 ef ]
-"4549 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4549: extern volatile __bit TXIF __attribute__((address(0x64)));
-[v _TXIF `Vb ~T0 @X0 0 e@100 ]
-"1134
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1134: extern volatile unsigned char TXREG __attribute__((address(0x019)));
-[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
-"4108
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"4150
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4150: extern volatile __bit RC4 __attribute__((address(0x3C)));
-[v _RC4 `Vb ~T0 @X0 0 e@60 ]
-"3961
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3961: extern volatile __bit IRCF0 __attribute__((address(0x47C)));
-[v _IRCF0 `Vb ~T0 @X0 0 e@1148 ]
-"3964
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3964: extern volatile __bit IRCF1 __attribute__((address(0x47D)));
-[v _IRCF1 `Vb ~T0 @X0 0 e@1149 ]
-"3967
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3967: extern volatile __bit IRCF2 __attribute__((address(0x47E)));
-[v _IRCF2 `Vb ~T0 @X0 0 e@1150 ]
+"4192 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4192: extern volatile __bit RD2 __attribute__((address(0x42)));
+[v _RD2 `Vb ~T0 @X0 0 e@66 ]
 "1417
 [; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1417: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -52,62 +28,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3450
 [; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3450: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"1246
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1246: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
-[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
-"2978
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2978: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"4180
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4180: extern volatile __bit RCIF __attribute__((address(0x65)));
-[v _RCIF `Vb ~T0 @X0 0 e@101 ]
-"1141
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1141: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
-[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"4192
-[; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4192: extern volatile __bit RD2 __attribute__((address(0x42)));
-[v _RD2 `Vb ~T0 @X0 0 e@66 ]
-"10 ./MotorMgr.h
-[; ;./MotorMgr.h: 10: extern uint8_t motor_command(uint8_t);
-[v _motor_command `(uc ~T0 @X0 0 ef1`uc ]
-"20 MainMgr.c
-[; ;MainMgr.c: 20: void project_init(void)
-[p x FOSC  =  INTRC_CLKOUT ]
-"21
-[; ;MainMgr.c: 21: {
-[p x WDTE  =  OFF        ]
-"22
-[; ;MainMgr.c: 22:     IRCF0=1;
-[p x PWRTE  =  OFF       ]
-"23
-[; ;MainMgr.c: 23:     IRCF1=1;
-[p x MCLRE  =  ON     ]
-"24
-[; ;MainMgr.c: 24:     IRCF2=1;
-[p x CP  =  OFF          ]
-"25
-[; ;MainMgr.c: 25: 
-[p x CPD  =  OFF         ]
-"26
-[; ;MainMgr.c: 26: 
-[p x BOREN  =  ON       ]
-"27
-[; ;MainMgr.c: 27:     TRISA = 0x00;
-[p x IESO  =  ON         ]
-"28
-[; ;MainMgr.c: 28:     TRISB = 0x10;
-[p x FCMEN  =  ON        ]
-"29
-[; ;MainMgr.c: 29: 
-[p x LVP  =  OFF          ]
-"32
-[; ;MainMgr.c: 32: 
-[p x BOR4V  =  BOR40V    ]
-"33
-[; ;MainMgr.c: 33: 
-[p x WRT  =  OFF         ]
 "55 D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;D:/MPLAB IDE/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -356,270 +276,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "19
 [p x WDTE  =  OFF ]
-"47 MainMgr.c
+"26 main.c
+[; ;main.c: 26: 
 [p x WDTE  =  OFF        ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51
+"30
+[; ;main.c: 30: 
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"52
+"31
+[; ;main.c: 31:     TRISA = 0x00;
 [e ( _project_init ..  ]
-"53
+"32
+[; ;main.c: 32:     TRISB = 0x10;
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"54
-[e ( _motor_init ..  ]
-"55
-[e ( _UART_init ..  ]
-"56
-[e $U 139  ]
+"40
+[; ;main.c: 40: 
 [e :U 140 ]
-[e :U 139 ]
-[e $ == -> _TXIF `i -> 0 `i 140  ]
-[e :U 141 ]
-"57
-[e = _TXREG -> -> 65 `i `uc ]
-"59
-[e = _RB0 -> -> 0 `i `b ]
-"60
-[e = _RC4 -> -> 1 `i `b ]
-"61
-[e :U 143 ]
-"62
+"41
+[; ;main.c: 41: 
 {
-"64
+"43
+[; ;main.c: 43: 
+[e = _RD2 -> -> 0 `i `b ]
+"44
+[; ;main.c: 44: 
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"45
+[; ;main.c: 45: 
+[e = _RD2 -> -> 1 `i `b ]
+"46
+[; ;main.c: 46:     TRISD = 0x00;
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"47
 }
-[e :U 142 ]
-[e $U 143  ]
-[e :U 144 ]
-"66
+[e :U 139 ]
+[e $U 140  ]
+[e :U 141 ]
+"49
 [e :UE 138 ]
 }
-"69
+"52
 [v _project_init `(v ~T0 @X0 1 ef ]
-"70
+"53
 {
 [e :U _project_init ]
 [f ]
-"71
-[e = _IRCF0 -> -> 1 `i `b ]
-"72
-[e = _IRCF1 -> -> 1 `i `b ]
-"73
-[e = _IRCF2 -> -> 1 `i `b ]
-"76
+"59
 [e = _TRISA -> -> 0 `i `uc ]
-"77
+"60
 [e = _TRISB -> -> 16 `i `uc ]
-"83
+"66
 [e = _TRISC -> -> 160 `i `uc ]
-"91
+"74
 [e = _TRISD -> -> 0 `i `uc ]
-"100
-[; ;MainMgr.c: 100:     ANSEL = 0x00;
+"83
+[; ;main.c: 83:     ANSEL = 0x00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"101
-[; ;MainMgr.c: 101:     ANSELH = 0x08;
+"84
+[; ;main.c: 84:     ANSELH = 0x08;
 [e = _ANSELH -> -> 8 `i `uc ]
-"103
-[; ;MainMgr.c: 103:     ADCON0 = 0x2D;
-[e = _ADCON0 -> -> 45 `i `uc ]
-"108
-[; ;MainMgr.c: 108:     ADCON1 = 0x00;
-[e = _ADCON1 -> -> 0 `i `uc ]
-"110
-[; ;MainMgr.c: 110: }
-[e :UE 145 ]
-}
-[v $root$_ISR_treatment `(v ~T0 @X0 0 e ]
-"112
-[; ;MainMgr.c: 112: void __attribute__((picinterrupt(("")))) ISR_treatment (void)
-[v _ISR_treatment `(v ~T1 @X0 1 ef ]
-"113
-[; ;MainMgr.c: 113: {
-{
-[e :U _ISR_treatment ]
-[f ]
-"114
-[; ;MainMgr.c: 114:     if(RCIF == 1)
-[e $ ! == -> _RCIF `i -> 1 `i 147  ]
-"115
-[; ;MainMgr.c: 115:     {
-{
-"116
-[; ;MainMgr.c: 116:         com_buffer = RCREG;
-[e = _com_buffer _RCREG ]
-"117
-[; ;MainMgr.c: 117:         RD2 = 1;
-[e = _RD2 -> -> 1 `i `b ]
-"118
-[; ;MainMgr.c: 118:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"119
-[; ;MainMgr.c: 119:         switch(com_buffer){
-[e $U 149  ]
-{
-"120
-[; ;MainMgr.c: 120:             case 0xF9:
-[e :U 150 ]
-"121
-[; ;MainMgr.c: 121:                 RC4 = 0b0;
-[e = _RC4 -> -> 0 `i `b ]
-"122
-[; ;MainMgr.c: 122:                 motorFault = motor_command(0xF);
-[e = _motorFault ( _motor_command (1 -> -> 15 `i `uc ]
-"123
-[; ;MainMgr.c: 123:                 break;
-[e $U 148  ]
-"125
-[; ;MainMgr.c: 125:             case 0xF6:
-[e :U 151 ]
-"126
-[; ;MainMgr.c: 126:                 RC4 = 0b0;
-[e = _RC4 -> -> 0 `i `b ]
-"127
-[; ;MainMgr.c: 127:                 motorFault = motor_command(0x6);
-[e = _motorFault ( _motor_command (1 -> -> 6 `i `uc ]
-"128
-[; ;MainMgr.c: 128:                 break;
-[e $U 148  ]
-"130
-[; ;MainMgr.c: 130:             case 0xF8:
-[e :U 152 ]
-"131
-[; ;MainMgr.c: 131:                 RC4 = 0b0;
-[e = _RC4 -> -> 0 `i `b ]
-"132
-[; ;MainMgr.c: 132:                 motorFault = motor_command(0x8);
-[e = _motorFault ( _motor_command (1 -> -> 8 `i `uc ]
-"133
-[; ;MainMgr.c: 133:                 break;
-[e $U 148  ]
-"135
-[; ;MainMgr.c: 135:             case 0xF1:
-[e :U 153 ]
-"136
-[; ;MainMgr.c: 136:                 RC4 = 0b0;
-[e = _RC4 -> -> 0 `i `b ]
-"137
-[; ;MainMgr.c: 137:                 motorFault = motor_command(0x1);
-[e = _motorFault ( _motor_command (1 -> -> 1 `i `uc ]
-"138
-[; ;MainMgr.c: 138:                 break;
-[e $U 148  ]
-"140
-[; ;MainMgr.c: 140:             case 0xF0:
-[e :U 154 ]
-"141
-[; ;MainMgr.c: 141:                 RC4 = 0b1;
-[e = _RC4 -> -> 1 `i `b ]
-"142
-[; ;MainMgr.c: 142:                 motorFault = motor_command(0x0);
-[e = _motorFault ( _motor_command (1 -> -> 0 `i `uc ]
-"143
-[; ;MainMgr.c: 143:                 break;
-[e $U 148  ]
-"145
-[; ;MainMgr.c: 145:             case 0x9F:
-[e :U 155 ]
-"146
-[; ;MainMgr.c: 146:                 RB0 = 0b1;
-[e = _RB0 -> -> 1 `i `b ]
-"147
-[; ;MainMgr.c: 147:                 break;
-[e $U 148  ]
-"149
-[; ;MainMgr.c: 149:             case 0x90:
-[e :U 156 ]
-"150
-[; ;MainMgr.c: 150:                 RB0 = 0b0;
-[e = _RB0 -> -> 0 `i `b ]
-"151
-[; ;MainMgr.c: 151:                 break;
-[e $U 148  ]
-"153
-[; ;MainMgr.c: 153:             case 0x99:
-[e :U 157 ]
-"154
-[; ;MainMgr.c: 154:                 break;
-[e $U 148  ]
-"156
-[; ;MainMgr.c: 156:             case 0x96:
-[e :U 158 ]
-"157
-[; ;MainMgr.c: 157:                 break;
-[e $U 148  ]
-"159
-[; ;MainMgr.c: 159:             default:
-[e :U 159 ]
-"160
-[; ;MainMgr.c: 160:                 while(TXIF==0);
-[e $U 160  ]
-[e :U 161 ]
-[e :U 160 ]
-[e $ == -> _TXIF `i -> 0 `i 161  ]
-[e :U 162 ]
-"161
-[; ;MainMgr.c: 161:                 TXREG = 0x44;
-[e = _TXREG -> -> 68 `i `uc ]
-"162
-[; ;MainMgr.c: 162:                 break;
-[e $U 148  ]
-"163
-[; ;MainMgr.c: 163:         }
-}
-[e $U 148  ]
-[e :U 149 ]
-[e [\ -> _com_buffer `i , $ -> 249 `i 150
- , $ -> 246 `i 151
- , $ -> 248 `i 152
- , $ -> 241 `i 153
- , $ -> 240 `i 154
- , $ -> 159 `i 155
- , $ -> 144 `i 156
- , $ -> 153 `i 157
- , $ -> 150 `i 158
- 159 ]
-[e :U 148 ]
-"164
-[; ;MainMgr.c: 164:         while(TXIF==0);
-[e $U 163  ]
-[e :U 164 ]
-[e :U 163 ]
-[e $ == -> _TXIF `i -> 0 `i 164  ]
-[e :U 165 ]
-"165
-[; ;MainMgr.c: 165:         TXREG = com_buffer;
-[e = _TXREG _com_buffer ]
-"166
-[; ;MainMgr.c: 166:         if ( motorFault != 0xAA )
-[e $ ! != -> _motorFault `i -> 170 `i 166  ]
-"167
-[; ;MainMgr.c: 167:         {
-{
-"169
-[; ;MainMgr.c: 169:         }
-}
-[e $U 167  ]
-"170
-[; ;MainMgr.c: 170:         else
-[e :U 166 ]
-"171
-[; ;MainMgr.c: 171:         {
-{
-"173
-[; ;MainMgr.c: 173:         }
-}
-[e :U 167 ]
-"174
-[; ;MainMgr.c: 174:         RCIF = 0;
-[e = _RCIF -> -> 0 `i `b ]
-"175
-[; ;MainMgr.c: 175:     }
-}
-[e :U 147 ]
-"176
-[; ;MainMgr.c: 176: }
-[e :UE 146 ]
+"93
+[; ;main.c: 93: }
+[e :UE 142 ]
 }
