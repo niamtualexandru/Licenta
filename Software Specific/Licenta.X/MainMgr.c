@@ -44,17 +44,12 @@
 #include "MotorMgr.h"
 
 
-#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
-
-
-
 void main(void) {
     project_init();
     __delay_ms(10);
     motor_init();
     UART_init();
-    while(TXIF==0);
-    TXREG = 0x41;
+
     /* BACKLIGHTS ON, HEADLIGHTS OFF */
     HEADLIGHTS = OFF;
     BACKLIGHTS = ON;
@@ -104,6 +99,7 @@ void project_init(void)
     /*
      * 0010 1101    
      * Fosc/2 ; AN11 ; DONE ; ADC is enabled
+     * TODO : DISABLE ADC UNTIL DISTRONIC IS ACTIVE
     */
     ADCON1 = 0x00;
     
@@ -160,9 +156,7 @@ void __interrupt() ISR_treatment (void)
         }
         if ( motorFault != COMMAND_UNKNOWN )
         {
-            /* Command ok, send the same ID for ack */
-            while(TXIF==0);
-            TXREG = com_buffer; 
+            /* Command ok */
         }
         else
         {

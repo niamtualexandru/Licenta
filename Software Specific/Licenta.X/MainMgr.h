@@ -8,7 +8,7 @@
 #include <xc.h>
 
 /* Functions declaration */
-void project_init(void);
+static void project_init(void);
 
 
 
@@ -16,7 +16,6 @@ void project_init(void);
 static uint8_t com_buffer = 0;
 static uint8_t motorFault = 1;
 
-#pragma config WDTE = OFF
 
 #define _XTAL_FREQ 8000000
 

@@ -10,7 +10,8 @@
 void UART_init(void)
 {
   BRGH = 1; /* high speed configuration */
-  SPBRG = 0x33; /* = 51 for 9600 baud rate calculated at FOSC 8M */
+  SPBRG = 0x0C; /* = 12 for 9600 baud rate calculated at FOSC 8M */
+  SPBRGH = 0x00;
   
   SYNC = 0;
   SPEN = 1; /* Asynchronus mode */

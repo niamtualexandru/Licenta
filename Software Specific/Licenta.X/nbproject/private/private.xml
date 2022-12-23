@@ -5,10 +5,12 @@
         <group>
             <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/BluetoothMgr.h</file>
             <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/MotorMgr.h</file>
+            <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/DistronicMgr.h</file>
             <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/MainMgr.c</file>
             <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/MotorMng.c</file>
             <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/MainMgr.h</file>
             <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/BluetoothMgr.c</file>
+            <file>file:/D:/Facultate/Licenta/Software%20Specific/Licenta.X/DistronicMgr.c</file>
         </group>
     </open-files>
 </project-private>

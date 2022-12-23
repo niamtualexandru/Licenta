@@ -7,6 +7,7 @@
       <itemPath>MainMgr.h</itemPath>
       <itemPath>BluetoothMgr.h</itemPath>
       <itemPath>MotorMgr.h</itemPath>
+      <itemPath>DistronicMgr.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,6 +19,7 @@
       <itemPath>MainMgr.c</itemPath>
       <itemPath>BluetoothMgr.c</itemPath>
       <itemPath>MotorMng.c</itemPath>
+      <itemPath>DistronicMgr.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
